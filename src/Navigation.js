@@ -12,7 +12,7 @@ export default class Navigation extends React.Component{
                     <Nav className="d-flex justify-content-end">
                     <Nav.Link  href="#home">Home</Nav.Link>
                     <Nav.Link href="#link">Parks</Nav.Link>
-                    <Nav.Link href="#link">Messages</Nav.Link>
+                    <Nav.Link href="#link">Matches</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
