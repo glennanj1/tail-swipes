@@ -1,20 +1,22 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import Oz from './ozzy_lick.png'
+import Spinner from 'react-bootstrap/Spinner'
+import Oz from './oz.png'
 
 export default class ProfileContainer extends React.Component {
 
     render() {
         return (
             <Card className='mx-auto' border='primary' style={{ width: '18rem'}}>
-                <Card.Img className='mx-auto'  variant="top" src={this.props.image} />
+                <Card.Img className='img-thumbnail'  variant="top" src={Oz} />
                 <Card.Body>
-                    <Card.Title>{this.props.name}</Card.Title>
+                    <Spinner animation="border" variant="alert" />
+                    <Card.Title>Ozzy</Card.Title>
                     <Card.Text>
-                        <h2>{this.props.info}</h2>
+                        Love long trips in the Car. Like barking at other dogs. Big parks are my favorite!
                     </Card.Text>
-                    <Button variant="primary">Paw</Button><br />
+                    <Button variant="primary">Paw</Button>{' '}
                     <Button variant="danger">No Paw</Button>
                 </Card.Body>
              </Card>
