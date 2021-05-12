@@ -1,12 +1,14 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
+import {NavLink} from 'react-router-dom'
+
 
 export default class Navigation extends React.Component{
     render(){
         return(
             <Navbar collapseOnSelect bg='primary' variant="dark" expand="sm">
-              <Navbar.Brand  href="#home">Tail Swipes</Navbar.Brand>
+              <Navbar.Brand  href="#home"><NavLink to="/" exact>Tail Swipes</NavLink></Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="d-flex justify-content-end">
