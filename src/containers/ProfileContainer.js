@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import Oz from './ozzy_lick.png'
+
 
 export default class ProfileContainer extends React.Component {
 
@@ -14,7 +14,8 @@ export default class ProfileContainer extends React.Component {
                     <Card.Text>
                         <h2>{this.props.info}</h2>
                     </Card.Text>
-                    <Button variant="primary">Paw</Button><br />
+                    <Button variant="primary">Paw</Button><br /><br />
+                    
                     <Button variant="danger">No Paw</Button>
                 </Card.Body>
              </Card>
