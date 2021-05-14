@@ -9,7 +9,7 @@ const profileReducer = (state = { profiles: [], loading: false }, action) => {
       case 'ADD_PROFILES':
         return {
           ...state,
-          cats: action.profiles,
+          profiles: action.profiles,
           loading: false
         }
       default:

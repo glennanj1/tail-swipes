@@ -5,20 +5,27 @@ import Button from 'react-bootstrap/Button'
 
 export default class ProfileContainer extends React.Component {
 
-    render() {
-        return (
-            <Card className='mx-auto' border='primary' style={{ width: '18rem'}}>
-                <Card.Img className='mx-auto'  variant="top" src={this.props.image} />
+    loadProfiles = () => {
+        return this.props.profiles.map(p =>
+    
+
+            <Card key={p.id} className='mx-auto' border='primary' style={{ width: '18rem'}}>
+                <Card.Img className='mx-auto'  variant="top" src={p.attributes.image} />
                 <Card.Body>
-                    <Card.Title>{this.props.name}</Card.Title>
-                    <Card.Text>
-                        <h2>{this.props.info}</h2>
-                    </Card.Text>
-                    <Button variant="primary">Paw</Button><br /><br />
+                    <Card.Title>{p.attributes.name}</Card.Title>
+            
+                    <Button variant="primary">Paw</Button>
                     
                     <Button variant="danger">No Paw</Button>
                 </Card.Body>
-             </Card>
+            </Card>
+        )}
+
+    render() {
+        return (
+            <div>
+                {this.loadProfiles()}
+            </div>
         )
     }
 }
