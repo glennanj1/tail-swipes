@@ -3,7 +3,7 @@ const profileReducer = (state = { profiles: [], loading: false }, action) => {
       case 'LOADING_PROFILES':
         return {
           ...state,
-          profiels: [...state.profiles],
+          profiles: [...state.profiles],
           loading: true
         }
       case 'ADD_PROFILES':
