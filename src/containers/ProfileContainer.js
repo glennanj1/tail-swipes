@@ -20,7 +20,7 @@ class ProfileContainer extends React.Component {
                         <span className="sr-only">Loading...</span>
                     </Spinner>)
         } else {
-            return this.props.data.map(p => <Profile id={p.id} name={p.attributes.name} image={p.attributes.image} />
+            return this.props.data.map(p => <Profile id={p.id} name={p.attributes.name} image={p.attributes.image} match={p.attributes.match} />
         )}
     }
 
