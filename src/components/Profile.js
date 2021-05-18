@@ -6,8 +6,14 @@ import TinderCard from 'react-tinder-card'
 class Profile extends Component {
 
     render() {
+        const onSwipe = (direction) => {
+            console.log(direction);
+            if (direction === 'right' && this.props.match) {
+                alert(`You matched with ${this.props.name}`)
+            }
+        }
         return (
-        <TinderCard  preventSwipe={['up', 'down']}>
+        <TinderCard  onSwipe={onSwipe} preventSwipe={['up', 'down']}>
                 <Card key={this.props.id} className='mx-auto'  style={{ bg: 'blue !important', borderRadius: '20px', position: 'absolute', left: '50vh', right: "50vh", top: '10vh'}}>
                     <Card.Img className='mx-auto'  variant="top" src={this.props.image} style={{borderRadius: '20px'}}/> 
                     <Card.ImgOverlay>
