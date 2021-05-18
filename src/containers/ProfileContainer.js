@@ -1,12 +1,28 @@
 import React from 'react'
 import Profile from '../components/Profile'
+import { fetchProfiles } from '../actions/fetchProfiles'
+import { connect } from 'react-redux';
 
 
 
-export default class ProfileContainer extends React.Component {
+class ProfileContainer extends React.Component {
+
+    componentDidMount(){
+        this.props.fetchProfiles()
+        console.log('fetching profiles')  
+      }
+
+      handleLoading = () => {
+        console.log(this.props.loading)
+        if(this.props.loading) {
+          return <div>Loading...</div>
+        } else {
+          return <ProfileContainer profiles={this.props.data} />
+        }
+      }
 
     loadProfiles = () => {
-        return this.props.profiles.map(p =>
+        return this.props.data.map(p =>
             <Profile id={p.id} name={p.attributes.name} image={p.attributes.image} />
         )}
 
@@ -14,3 +30,13 @@ export default class ProfileContainer extends React.Component {
         return  <div>{this.loadProfiles()}</div>
     }
 }
+
+const mapDispatchToProps = state => {
+    return {
+      data: state.profiles,
+      loading: state.loading
+  
+    }
+}
+  
+  export default connect(mapDispatchToProps, { fetchProfiles })(ProfileContainer);
