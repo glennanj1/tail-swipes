@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App'
 import Messages from './components/Messages'
-import About from './components/About'
+import Park from './components/Park'
 import Navigation from './components/Navigation'
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
@@ -25,7 +25,7 @@ ReactDOM.render(
         <Navigation />
         <Route exact path="/" component={App} />
         <Route exact path="/messages" component={Messages} />
-        <Route exact path="/about" component={About} />
+        <Route exact path="/park" component={Park} />
       </Router>
     </Provider>
   </React.StrictMode>,
