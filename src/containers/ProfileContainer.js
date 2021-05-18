@@ -36,4 +36,4 @@ const mapDispatchToProps = state => {
     }
 }
   
-  export default connect(mapDispatchToProps, { fetchProfiles })(ProfileContainer);
+export default connect(mapDispatchToProps, { fetchProfiles })(ProfileContainer);
