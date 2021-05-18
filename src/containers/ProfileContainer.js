@@ -12,19 +12,14 @@ class ProfileContainer extends React.Component {
         console.log('fetching profiles')  
       }
 
-      handleLoading = () => {
+    loadProfiles = () => {
         console.log(this.props.loading)
         if(this.props.loading) {
-          return <div>Loading...</div>
+            return <div>Loading.....</div>
         } else {
-          return <ProfileContainer profiles={this.props.data} />
-        }
-      }
-
-    loadProfiles = () => {
-        return this.props.data.map(p =>
-            <Profile id={p.id} name={p.attributes.name} image={p.attributes.image} />
+        return this.props.data.map(p => <Profile id={p.id} name={p.attributes.name} image={p.attributes.image} />
         )}
+    }
 
     render() {
         return  <div>{this.loadProfiles()}</div>
@@ -35,7 +30,6 @@ const mapDispatchToProps = state => {
     return {
       data: state.profiles,
       loading: state.loading
-  
     }
 }
   
