@@ -2,6 +2,7 @@ import React from 'react'
 import Profile from '../components/Profile'
 import { fetchProfiles } from '../actions/fetchProfiles'
 import { connect } from 'react-redux';
+import Spinner from 'react-bootstrap/Spinner'
 
 
 
@@ -15,9 +16,11 @@ class ProfileContainer extends React.Component {
     loadProfiles = () => {
         console.log(this.props.loading)
         if(this.props.loading) {
-            return <div>Loading.....</div>
+            return (<Spinner animation="border" size='large' role="status" style={{position: 'absolute', top: '10vh', left: '50vh'}}>
+                        <span className="sr-only">Loading...</span>
+                    </Spinner>)
         } else {
-        return this.props.data.map(p => <Profile id={p.id} name={p.attributes.name} image={p.attributes.image} />
+            return this.props.data.map(p => <Profile id={p.id} name={p.attributes.name} image={p.attributes.image} />
         )}
     }
 
