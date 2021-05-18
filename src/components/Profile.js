@@ -14,7 +14,7 @@ class Profile extends Component {
         }
         return (
         <TinderCard  onSwipe={onSwipe} preventSwipe={['up', 'down']}>
-                <Card key={this.props.id} className='mx-auto'  style={{ bg: 'blue !important', borderRadius: '20px', position: 'absolute', left: '50vh', right: "50vh", top: '10vh'}}>
+                <Card className='mx-auto'  style={{ borderRadius: '20px', position: 'absolute', left: '50vh', right: "50vh", top: '10vh'}}>
                     <Card.Img className='mx-auto'  variant="top" src={this.props.image} style={{borderRadius: '20px'}}/> 
                     <Card.ImgOverlay>
                         <Card.Title style={{position: 'absolute', bottom: '0', color: 'white', fontSize: '50px'}} >{this.props.name}</Card.Title>
