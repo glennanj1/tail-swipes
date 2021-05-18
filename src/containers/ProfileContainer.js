@@ -11,7 +11,7 @@ class ProfileContainer extends React.Component {
     componentDidMount(){
         this.props.fetchProfiles()
         console.log('fetching profiles')  
-      }
+    }
 
     loadProfiles = () => {
         console.log(this.props.loading)
