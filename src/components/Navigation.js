@@ -13,7 +13,7 @@ export default class Navigation extends React.Component{
               <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="d-flex justify-content-end">
                         <Nav.Link as={Link} to='/messages'>Messages</Nav.Link>
-                        <Nav.Link as={Link} to='/about'>About</Nav.Link>
+                        <Nav.Link as={Link} to='/park'>Park</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
