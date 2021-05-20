@@ -29,11 +29,11 @@ class ProfileContainer extends React.Component {
     }
 }
 
-const mapDispatchToProps = state => {
+const mapStateToProps = state => {
     return {
-      data: state.profiles,
+      data: state.profiles.profiles,
       loading: state.loading
     }
 }
   
-export default connect(mapDispatchToProps, { fetchProfiles })(ProfileContainer);
+export default connect(mapStateToProps, { fetchProfiles })(ProfileContainer);
