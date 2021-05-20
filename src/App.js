@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-import Park from './components/Park'
 import {
   BrowserRouter as Router,
   Route,
@@ -10,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MessageContainer from './containers/MessageContainer';
 import ProfileContainer from './containers/ProfileContainer';
 import UserMessages from './containers/UserMessages';
-
+import MapContainer from './containers/ParkContainer'
 
 export default class App extends React.Component {
 
@@ -22,7 +21,7 @@ export default class App extends React.Component {
           <Route exact path="/" component={ProfileContainer} />
           <Route exact path="/messages" component={MessageContainer} />
           <Route exact path="/messages/:user" component={UserMessages} />
-          <Route exact path="/park" component={Park} />
+          <Route exact path="/park" component={MapContainer} />
         </Switch>
       </Router>
     </div>
