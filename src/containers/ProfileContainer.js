@@ -3,6 +3,7 @@ import Profile from '../components/Profile'
 import { fetchProfiles } from '../actions/fetchProfiles'
 import { connect } from 'react-redux';
 import Spinner from 'react-bootstrap/Spinner'
+import Navigation from '../components/Navigation'
 
 
 
@@ -25,7 +26,10 @@ class ProfileContainer extends React.Component {
     }
 
     render() {
-        return <div>{this.loadProfiles()}</div>
+        return (<div>
+                    <Navigation />
+                    {this.loadProfiles()}
+                </div>)
     }
 }
 
