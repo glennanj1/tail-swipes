@@ -36,7 +36,7 @@ class ProfileContainer extends React.Component {
 const mapStateToProps = state => {
     return {
       data: state.profiles.profiles,
-      loading: state.loading
+      loading: state.profiles.loading
     }
 }
   
