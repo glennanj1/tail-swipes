@@ -20,7 +20,7 @@ class MessageContainer extends React.Component {
                         <span className="sr-only">Loading...</span>
                     </Spinner>)
         } else {
-            return this.props.data.map(d => <Messages name={d.attributes.name} /> 
+            return this.props.data.map(d => <Messages name={d.attributes.name} active={d.attributes.active} image={d.attributes.image} message={d.attributes.message} /> 
         )}
     }
 
