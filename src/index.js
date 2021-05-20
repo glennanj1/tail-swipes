@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App'
-import Messages from './components/Messages'
 import Park from './components/Park'
 import Navigation from './components/Navigation'
 import { createStore, applyMiddleware } from 'redux';
@@ -11,11 +10,13 @@ import {
   BrowserRouter as Router,
   Route
 } from "react-router-dom";
-import profileReducer from './reducers/profileReducer'
+import rootReducer from './reducers'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import MessageContainer from './containers/MessageContainer';
 
 
-const store = createStore(profileReducer, applyMiddleware(thunk));
+const store = createStore( rootReducer, applyMiddleware(thunk));
+console.log(store.getState())
 
 
 ReactDOM.render(
@@ -24,7 +25,7 @@ ReactDOM.render(
       <Router>
         <Navigation />
         <Route exact path="/" component={App} />
-        <Route exact path="/messages" component={Messages} />
+        <Route exact path="/messages" component={MessageContainer} />
         <Route exact path="/park" component={Park} />
       </Router>
     </Provider>
