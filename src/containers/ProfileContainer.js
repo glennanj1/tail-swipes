@@ -28,9 +28,12 @@ class ProfileContainer extends React.Component {
     render() {
         return (<div>
                     <Navigation />
-                    {this.loadProfiles()}
-                </div>)
-    }
+                    <div style={{display: 'flex', justifyContent: 'center'}}>
+                        {this.loadProfiles()}
+                    </div>
+                </div>
+                
+        )}
 }
 
 const mapStateToProps = state => {
