@@ -4,10 +4,19 @@ import { fetchProfiles } from '../actions/fetchProfiles'
 import { connect } from 'react-redux';
 import Spinner from 'react-bootstrap/Spinner'
 import Navigation from '../components/Navigation'
+import Popup from "../components/Modal";
+import TinderCard from 'react-tinder-card'
 
 
 
 class ProfileContainer extends React.Component {
+    
+    state = {
+        isOpen: false
+      };
+
+    openModal = () => this.setState({ isOpen: true });
+    closeModal = () => this.setState({ isOpen: false });
 
     componentDidMount(){
         this.props.fetchProfiles()
@@ -21,15 +30,28 @@ class ProfileContainer extends React.Component {
                         <span className="sr-only">Loading...</span>
                     </Spinner>)
         } else {
-            return this.props.data.map(p => <Profile key={p.id} name={p.attributes.name} image={p.attributes.image} match={p.attributes.match} />
+            return this.props.data.map(p => 
+            <TinderCard style={{position: 'absolute'}} onSwipe={this.onSwipe} preventSwipe={['up', 'down']}>
+                <Profile key={p.id} name={p.attributes.name} image={p.attributes.image} match={p.attributes.match} />
+            </TinderCard>
         )}
+    }
+
+    onSwipe = (direction) => {
+        console.log(direction);
+        if (direction === 'right' && this.props.match) {
+            this.openModal();
+        }
     }
 
     render() {
         return (<div>
                     <Navigation />
+                    <Popup show={this.state.isOpen} onHide={this.closeModal} closeModal={this.closeModal}/>
                     <div style={{display: 'flex', justifyContent: 'center'}}>
-                        {this.loadProfiles()}
+                        <div style={{position: 'absolute', marginTop: '15vh'}}>
+                            {this.loadProfiles()}
+                        </div>
                     </div>
                 </div>
                 
