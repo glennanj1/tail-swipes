@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from  'react-router-dom'
 import {Modal, Button} from 'react-bootstrap'
 
 export default class Popup extends Component {
@@ -11,7 +12,7 @@ export default class Popup extends Component {
                 </Modal.Header>
                 <Modal.Body>Woohoo, you matched with x!</Modal.Body>
                 <Modal.Footer>
-                <Button variant="primary" onClick={console.log('dispatch new message')}>New Message</Button>
+                <Link to="/messages/{this.props.name}" className="btn btn-primary">Message</Link>
                 <Button variant="secondary" onClick={this.props.closeModal}>Close</Button>
                 </Modal.Footer>
                 </Modal>
