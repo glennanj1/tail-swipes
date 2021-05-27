@@ -12,6 +12,11 @@ const messageReducer = (state = { messages: [], loading: false }, action) => {
           messages: action.messages,
           loading: false
         }
+      case 'NEW_MESSAGE':
+        return {
+          ...state, 
+          messages: [...state.messages, action.payload]
+        }
       default:
         return state;
     }
