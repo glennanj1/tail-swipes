@@ -23,7 +23,7 @@ class MessageContainer extends React.Component {
                         <span className="sr-only">Loading...</span>
                     </Spinner>)
         } else {
-            return this.props.data.map(d => <Messages name={d.attributes.name} active={d.attributes.active} image={d.attributes.image} message={d.attributes.message} /> 
+            return this.props.data.map(d => <Messages key={d.id} name={d.attributes.name} active={d.attributes.active} image={d.attributes.image} message={d.attributes.message} /> 
         )}
     }
 
@@ -40,7 +40,7 @@ class MessageContainer extends React.Component {
 const mapStateToProps = state => {
     return {
       data: state.messages.messages,
-      loading: state.loading
+      loading: state.messages.loading
     }
 }
   
