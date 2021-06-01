@@ -18,11 +18,13 @@ class MessageContainer extends React.Component {
 
     loadMessages = () => {
         console.log(this.props.loading)
+
         if(this.props.loading) {
             return (<Spinner animation="border" size='large' role="status" style={{position: 'absolute', top: '10vh', left: '50vh'}}>
                         <span className="sr-only">Loading...</span>
                     </Spinner>)
         } else {
+            console.log(this.props.data);
             return this.props.data.map(d => <Messages key={d.id} name={d.attributes.name} active={d.attributes.active} image={d.attributes.image} message={d.attributes.message} /> 
         )}
     }
