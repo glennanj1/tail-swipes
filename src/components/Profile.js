@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card'
 import TinderCard from 'react-tinder-card'
 import Popup from "../components/Modal";
 import { createMessage } from '../actions/fetchMessages'
+import { deleteProfile } from '../actions/fetchProfiles'
 
 
 
@@ -30,8 +31,11 @@ class Profile extends Component {
                     image: this.props.image
                 }
             });
+            this.props.deleteProfile(this.props.id);
             this.openModal();
 
+        } else {
+            this.props.deleteProfile(this.props.id);
         }
     }
 
@@ -52,4 +56,4 @@ class Profile extends Component {
                 )}
 }
   
-export default connect(null, { createMessage })(Profile);
+export default connect(null, { createMessage, deleteProfile })(Profile);
