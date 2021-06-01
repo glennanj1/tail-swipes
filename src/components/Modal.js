@@ -12,7 +12,7 @@ export default class Popup extends Component {
                 </Modal.Header>
                 <Modal.Body>Woohoo, you matched with {this.props.name}!</Modal.Body>
                 <Modal.Footer>
-                <Link to={`/messages/${this.props.name}`} className="btn btn-primary">Message</Link>
+                <Link to={`/messages/`} className="btn btn-primary">Message</Link>
                 <Button variant="secondary" onClick={this.props.closeModal}>Close</Button>
                 </Modal.Footer>
                 </Modal>
