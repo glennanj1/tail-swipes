@@ -6,9 +6,6 @@ import Spinner from 'react-bootstrap/Spinner'
 import Navigation from '../components/Navigation'
 
 
-
-
-
 class MessageContainer extends React.Component {
     
     componentDidMount(){
