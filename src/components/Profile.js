@@ -14,16 +14,14 @@ class Profile extends Component {
         isOpen: false
       };
 
-    openModal = () => { console.log(this);
+    openModal = () => { 
         this.setState({ isOpen: true });
     }
     closeModal = () => this.setState({ isOpen: false });
 
 
     onSwipe = (direction) => {
-        console.log(direction);
         if (direction === 'right' && this.props.match) {
-            console.log(this)
             this.props.createMessage({ 
                 message: {
                     name: this.props.name ,
