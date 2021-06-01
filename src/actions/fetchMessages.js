@@ -20,7 +20,7 @@ export const createMessage = (message) => {
         }
         fetch ('http://localhost:3000/messages', config)
         .then(r => r.json())
-        .then(ResponseJSON => {dispatch({ type: 'NEW_MESSAGE', payload: ResponseJSON})})
+        .then(ResponseJSON => {dispatch({ type: 'NEW_MESSAGE', payload: ResponseJSON.data})})
     }
 }
 
