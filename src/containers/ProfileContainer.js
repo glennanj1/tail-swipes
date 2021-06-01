@@ -18,6 +18,8 @@ class ProfileContainer extends React.Component {
             return (<Spinner animation="border" size='large' role="status" style={{position: 'absolute', top: '10vh', left: '50vh'}}>
                         <span className="sr-only">Loading...</span>
                     </Spinner>)
+        } else if(this.props.data.length === 0) {
+            return <h1>All out of matches check back later :D</h1>
         } else {
             console.log(this.props.data)
             return this.props.data.map(p => 
