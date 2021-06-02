@@ -3,7 +3,7 @@ export function fetchMessages() {
     return (dispatch) => {
         dispatch({ type: 'LOADING_MESSAGES' });
         console.log('loading messages from fetch')
-        fetch ('http://localhost:3000/messages').then(r => r.json()).then(ResponseJSON => {dispatch({ type: 'ADD_MESSAGES', messages: ResponseJSON.data })})
+        fetch ('https://tailswipes.netlify.app/messages').then(r => r.json()).then(ResponseJSON => {dispatch({ type: 'ADD_MESSAGES', messages: ResponseJSON.data })})
     }
 }
 export const createMessage = (message) => {
@@ -19,7 +19,7 @@ export const createMessage = (message) => {
             },
             body: JSON.stringify(message)
         }
-        fetch ('http://localhost:3000/messages', config)
+        fetch ('https://tailswipes.netlify.app/messages', config)
         .then(r => r.json())
         .then(ResponseJSON => {dispatch({ type: 'NEW_MESSAGE', payload: ResponseJSON.data})})
     }
@@ -29,7 +29,7 @@ export const getMessage = (messageId) => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_MESSAGES' });
         console.log(messageId)
-        fetch (`http://localhost:3000/messages/${messageId}`)
+        fetch (`https://tailswipes.netlify.app/messages/${messageId}`)
         .then(r => r.json())
         .then(ResponseJSON => {dispatch({ type: 'GET_MESSAGE', messages: ResponseJSON.data})})
     }
