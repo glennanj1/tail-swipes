@@ -18,7 +18,8 @@ class MessageContainer extends React.Component {
                         <span className="sr-only">Loading...</span>
                     </Spinner>)
         } else {
-            return this.props.data.map(d => <Messages key={d.id} id={d.id} name={d.attributes.name} active={d.attributes.active} image={d.attributes.image} message={d.attributes.message} /> 
+            console.log(this.props.data)
+            return this.props.data.map(d => <Messages key={d.id} id={d.id} name={d.attributes.name} active={d.attributes.active} image={d.attributes.image} message={d.attributes.message} match={d.attributes.created_at}/> 
         )}
     }
 
