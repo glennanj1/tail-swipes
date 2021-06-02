@@ -22,13 +22,15 @@ class UserMessages extends React.Component {
         console.log(this.state.value)
         const data = {
                 id: this.props.location.state.id,
-                name: 'me',
-                image: 'https://lh3.googleusercontent.com/fife/ABSRlIrR0M6TjKaKGrMYp2vhPmjCXKbYm8pZMTKxCwz7ca_jC-Dvxun9H7g_GHKcna4fjqcSASKeqWCF4SPd7wy0MiEtYoFzpApxDXgf99qEWu5y2VfMAPv6giGIGqCFH390lbiC39umKu2hhbiQnoaQ_zGWr61L9T5XEUGETtTOYV-RZXGYla9bt_2hlNHQzvFUSjJ4cGANoNq4PXUhfG1xQwaXX-UB8pz6WOX_GTTi_FthBG9AnhetEFzyNDhryQW6_juNTvOECIBRJqFDVIk0a0lK3NXOoeJQhuzWh_ZAFjFKfnaG1AXa5ZmiVUZfkg3l8XLkEXI8jz9p6t-F16qQcV29TbItvrzQVcNKSIM8yh2BznmuBKOIhpZCPQ9FnFfxSFhidRvzI59mpEFnHf_4h-krGmIP9mkyzgM_aY0rmvg0MGcdIDZqPGVYpbf9eo4HDXtoj7gt_ipy8A4nqeBV-y7FXAoiCKjGfT9yc0dj899YqXz2sJizxjsKfPyw20wCqxPYiZy7J5WLFwU8cDsx0PhJUTOxpvGhnGeLACfeZxqX7SQ44YF7PcjlGENkxtG3Thmh0Weh3QSXvUk4XlGleslXHEhYHNlydA8vzg0IL-Lj5OLVFi2M9hrv0B1KxQQlkrOFdyLABm1gEqXz_d1jVC1MKR9HXTFZ5fTxn79yxron9L8lJyrfBIKwi21G4ejx0IfklU43MGofDxZlgCiWN86Ylq3dSmmcPR5C=s220-w165-h220-rw',
+                name: '',
+                image: 'https://lh3.googleusercontent.com/ta9V5fRK0DJbs530IT4m01fr9Izn2Q5zYUnpO2IpLMMjp8y-p9jpAus2F516p9x8_TJ-o9oGYAt37Y8wQPk=w330-h440-rw',
                 chat: this.state.value,
                 message_id: this.props.location.state.id
         }
         
-        return this.props.sendMessage(data)
+        this.props.sendMessage(data)
+
+        this.setState({value: ''})
         
     }
 
