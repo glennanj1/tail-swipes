@@ -41,6 +41,7 @@ class ProfileContainer extends React.Component {
                     closeModal={this.closeModal} />
         )}
     }
+    
     onSwipe = (direction) => {
         if (direction === 'right' && this.props.match) {
             this.props.createMessage({ 
