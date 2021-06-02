@@ -1,50 +1,15 @@
 import { Component } from "react";
-import { connect } from 'react-redux';
 import Card from 'react-bootstrap/Card'
 import TinderCard from 'react-tinder-card'
 import Popup from "../components/Modal";
-import { createMessage } from '../actions/fetchMessages'
-import { deleteProfile } from '../actions/fetchProfiles'
 
-
-
-
-class Profile extends Component {
-
-    state = {
-        isOpen: false
-      };
-
-    openModal = () => { 
-        this.setState({ isOpen: true });
-    }
-    closeModal = () => this.setState({ isOpen: false });
-
-
-    onSwipe = (direction) => {
-        if (direction === 'right' && this.props.match) {
-            this.props.createMessage({ 
-                message: {
-                    name: this.props.name ,
-                    message: this.props.message,
-                    profile_id: this.props.id,
-                    image: this.props.image
-                }
-            });
-            this.props.deleteProfile(this.props.id);
-            this.openModal();
-
-        } else {
-            this.props.deleteProfile(this.props.id);
-        }
-    }
+export default class Profile extends Component {
 
     render() {
         return (
                 <div style={{position: 'relative', maxWidth: '80vw'}}>
-                    <Popup name={this.props.name} show={this.state.isOpen} onHide={this.closeModal} closeModal={this.closeModal}/>
-
-                    <TinderCard style={{position: 'absolute'}}  onSwipe={this.onSwipe} preventSwipe={['up', 'down']}>
+                    <Popup name={this.props.name} show={this.props.isOpen} onHide={this.props.closeModal} closeModal={this.props.closeModal}/>
+                    <TinderCard style={{position: 'absolute'}}  onSwipe={this.props.onSwipe} preventSwipe={['up', 'down']}>
                         <Card style={{borderRadius: '20px'}}>
                             <Card.Img style={{borderRadius: '20px'}} variant="top" src={this.props.image} /> 
                             <Card.ImgOverlay>
@@ -53,7 +18,8 @@ class Profile extends Component {
                         </Card> 
                     </TinderCard>
                 </div>
+
                 )}
+
 }
   
-export default connect(null, { createMessage, deleteProfile })(Profile);

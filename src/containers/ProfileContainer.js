@@ -1,6 +1,8 @@
 import React from 'react'
 import Profile from '../components/Profile'
 import { fetchProfiles } from '../actions/fetchProfiles'
+import { createMessage } from '../actions/fetchMessages'
+import { deleteProfile } from '../actions/fetchProfiles'
 import { connect } from 'react-redux';
 import Spinner from 'react-bootstrap/Spinner'
 import Navigation from '../components/Navigation'
@@ -8,6 +10,10 @@ import Navigation from '../components/Navigation'
 
 
 class ProfileContainer extends React.Component {
+
+    state = {
+        isOpen: false
+    };
     
     componentDidMount(){
         this.props.fetchProfiles()
@@ -23,9 +29,40 @@ class ProfileContainer extends React.Component {
         } else {
             console.log(this.props.data)
             return this.props.data.map(p => 
-                <Profile key={p.id} id={p.id} name={p.attributes.name} image={p.attributes.image} match={p.attributes.match} onSwipe={this.onSwipe} />
+                <Profile 
+                    key={p.id} 
+                    id={p.id} 
+                    name={p.attributes.name} 
+                    image={p.attributes.image} 
+                    match={p.attributes.match} 
+                    onSwipe={this.onSwipe}
+                    show={this.state.isOpen}
+                    onHide={this.onHide}
+                    closeModal={this.closeModal} />
         )}
     }
+    onSwipe = (direction) => {
+        if (direction === 'right' && this.props.match) {
+            this.props.createMessage({ 
+                message: {
+                    name: this.props.name ,
+                    message: this.props.message,
+                    profile_id: this.props.id,
+                    image: this.props.image
+                }
+            });
+            this.props.deleteProfile(this.props.id);
+            this.openModal();
+
+        } else {
+            this.props.deleteProfile(this.props.id);
+        }
+    }
+
+    openModal = () => { 
+        this.setState({ isOpen: true });
+    }
+    closeModal = () => this.setState({ isOpen: false });
 
     render() {
         return (<div>
@@ -35,8 +72,7 @@ class ProfileContainer extends React.Component {
                             {this.loadProfiles()}
                         </div>
                     </div>
-                </div>
-                
+                </div>   
         )}
 }
 
@@ -47,4 +83,4 @@ const mapStateToProps = state => {
     }
 }
   
-export default connect(mapStateToProps, { fetchProfiles })(ProfileContainer);
+export default connect(mapStateToProps, { fetchProfiles, createMessage, deleteProfile })(ProfileContainer);
