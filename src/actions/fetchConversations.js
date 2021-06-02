@@ -3,7 +3,7 @@ export function fetchConversations(id) {
     return (dispatch) => {
         dispatch({ type: 'LOADING_CONVERSATIONS' });
         console.log('loading messages from fetch')
-        fetch (`http://localhost:3000/messages/${id}/conversations`).then(r => r.json()).then(ResponseJSON => {dispatch({ type: 'ADD_CONVERSATIONS', conversations: ResponseJSON.data })})
+        fetch (`https://tailswipes.netlify.app/messages/${id}/conversations`).then(r => r.json()).then(ResponseJSON => {dispatch({ type: 'ADD_CONVERSATIONS', conversations: ResponseJSON.data })})
     }
 }
 
@@ -28,7 +28,7 @@ export function sendMessage({id, name, chat, image, message_id}) {
                 }
             })
         }
-        fetch (`http://localhost:3000/messages/${id}/conversations`, config)
+        fetch (`https://tailswipes.netlify.app//messages/${id}/conversations`, config)
         .then(r => r.json())
         .then(ResponseJSON => {dispatch({ type: 'NEW_CHAT', payload: ResponseJSON.data})})
     }
