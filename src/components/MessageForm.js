@@ -4,7 +4,7 @@ import { Form, Button } from 'react-bootstrap'
 export default class MessageShow extends Component {
     render() {
         return (
-            <Form onSubmit={this.props.handleSubmit} style={{position: 'absolute', width: '100vw', bottom: '10px'}}>
+            <Form onSubmit={this.props.handleSubmit} style={{backgroundColor: 'primary', position: 'fixed', width: '100vw', bottom: '0pt'}}>
                 <Form.Group controlId="formBasicMessage">
                     <Form.Label>Messages</Form.Label>
                     <Form.Control type="text" value={this.props.value} onChange={this.props.onChange} placeholder="Enter Message" />
