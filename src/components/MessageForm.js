@@ -7,7 +7,7 @@ export default class MessageShow extends Component {
             <Form onSubmit={this.props.handleSubmit} style={{position: 'absolute', width: '100vw', bottom: '10px'}}>
                 <Form.Group controlId="formBasicMessage">
                     <Form.Label>Messages</Form.Label>
-                    <Form.Control type="message" placeholder="Enter Message" />
+                    <Form.Control type="text" value={this.props.value} onChange={this.props.onChange} placeholder="Enter Message" />
                     <Form.Text className="text-muted">
                     example catch phrase here
                     </Form.Text>
