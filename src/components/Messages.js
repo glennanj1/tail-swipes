@@ -14,7 +14,7 @@ export default class Messages extends React.Component {
                         <h1>{this.props.name}</h1>
                         <p>{this.props.message}</p>
                     </div>
-                    <Image src={this.props.image} roundedCircle />  
+                    <Image style={{width: '180px', height: '180px'}} src={this.props.image} roundedCircle />  
                 </Link>  
             </div>
         )
