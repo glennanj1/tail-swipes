@@ -23,7 +23,7 @@ class UserMessages extends React.Component {
         const data = {
                 id: this.props.location.state.id,
                 name: '',
-                image: 'https://lh3.googleusercontent.com/ta9V5fRK0DJbs530IT4m01fr9Izn2Q5zYUnpO2IpLMMjp8y-p9jpAus2F516p9x8_TJ-o9oGYAt37Y8wQPk=w330-h440-rw',
+                image: 'https://lh3.googleusercontent.com/fdmhHMBgpV2IJXwj2yl8i8XmOy-dRCdNv3arHeycRYMxtTMG5G7Jkuvzle5y3jF7rFxTcBxQGEPnVTUoSAYJ-lrVV2_CNXnOa9kqIE1tN_pZbx43FZOBqEULSrqY-tM2E9XakWvXRvE=w84',
                 chat: this.state.value,
                 message_id: this.props.location.state.id
         }

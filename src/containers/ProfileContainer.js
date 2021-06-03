@@ -23,12 +23,18 @@ class ProfileContainer extends React.Component {
 
     loadProfiles = () => {
         if(this.props.loading) {
-            return (<Spinner animation="border" size='large' role="status" style={{position: 'absolute', top: '10vh', left: '50vh'}}>
+            return (<Spinner animation="border" size='large' role="status" style={{position: 'absolute', top: '10vh'}}>
                         <span className="sr-only">Loading...</span>
                     </Spinner>)
         } else if(this.props.data.length === 0) {
-            return <h1>All out of matches check back later :D</h1>
-        } else {
+            return (
+            <div>
+                <h1>All out of matches check back later :D</h1>
+                <Spinner animation="border" size='large' role="status" style={{position: 'absolute', top: '10vh'}}>
+                        <span className="sr-only">Loading...</span>
+                </Spinner>
+            </div>
+            )} else {
             return this.props.data.map(p => 
                 <Profile 
                     key={p.id} 
@@ -73,7 +79,7 @@ class ProfileContainer extends React.Component {
                     <Navigation />
                     <Popup name={this.state.name} show={this.state.isOpen} onHide={this.closeModal} closeModal={this.closeModal}/>
                     <div style={{display: 'flex', justifyContent: 'center'}}>
-                        <div style={{position: 'absolute', marginTop: '15vh'}}>
+                        <div style={{position: 'absolute'}}>
                             {this.loadProfiles()}
                         </div>
                     </div>
