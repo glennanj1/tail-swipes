@@ -4,7 +4,9 @@ import {Modal, Button} from 'react-bootstrap'
 
 export default class Popup extends Component {
     render() {
+       
         return (
+           
             <div>
                 <Modal show={this.props.show}>
                 <Modal.Header closeButton>

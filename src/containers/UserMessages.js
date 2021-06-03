@@ -4,7 +4,7 @@ import MessageForm from '../components/MessageForm'
 import { fetchConversations, sendMessage } from '../actions/fetchConversations'
 import { connect } from 'react-redux';
 import Conversations from "../components/Conversations";
-// import Spinner from 'react-bootstrap/Spinner'
+
 
 
 
@@ -39,7 +39,6 @@ class UserMessages extends React.Component {
     }
 
     loadMessages = () => {
-        console.log(this.props.data)
         return this.props.data.map(d => <Conversations key={d.id} name={d.attributes.name} image={d.attributes.image} chat={d.attributes.chat} />)
     }
 
