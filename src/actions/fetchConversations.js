@@ -1,9 +1,11 @@
+import { url } from '../index'
+
 export function fetchConversations(id) {
     console.log('fetch convos')
     return (dispatch) => {
         dispatch({ type: 'LOADING_CONVERSATIONS' });
         console.log('loading messages from fetch')
-        fetch (`https://tailswipes.herokuapp.com/messages/${id}/conversations`).then(r => r.json()).then(ResponseJSON => {dispatch({ type: 'ADD_CONVERSATIONS', conversations: ResponseJSON.data })})
+        fetch (`${url}/messages/${id}/conversations`).then(r => r.json()).then(ResponseJSON => {dispatch({ type: 'ADD_CONVERSATIONS', conversations: ResponseJSON.data })})
     }
 }
 
@@ -17,7 +19,7 @@ export function sendMessage({id, name, chat, image, message_id}) {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',
-                'Accepts': 'application/json'
+                'Accept': 'application/json'
             },
             body: JSON.stringify({
                 conversation: {
@@ -28,7 +30,7 @@ export function sendMessage({id, name, chat, image, message_id}) {
                 }
             })
         }
-        fetch (`https://tailswipes.herokuapp.com/messages/${id}/conversations`, config)
+        fetch (`${url}/messages/${id}/conversations`, config)
         .then(r => r.json())
         .then(ResponseJSON => {dispatch({ type: 'NEW_CHAT', payload: ResponseJSON.data})})
     }
