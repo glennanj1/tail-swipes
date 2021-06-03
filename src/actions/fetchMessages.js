@@ -3,7 +3,7 @@ export function fetchMessages() {
     return (dispatch) => {
         dispatch({ type: 'LOADING_MESSAGES' });
         console.log('loading messages from fetch')
-        fetch ('https://tailswipes.netlify.app/messages').then(r => r.json()).then(ResponseJSON => {dispatch({ type: 'ADD_MESSAGES', messages: ResponseJSON.data })})
+        fetch ('https://tailswipes.herokuapp.com/messages').then(r => r.json()).then(ResponseJSON => {dispatch({ type: 'ADD_MESSAGES', messages: ResponseJSON.data })})
     }
 }
 export const createMessage = (message) => {
@@ -19,7 +19,7 @@ export const createMessage = (message) => {
             },
             body: JSON.stringify(message)
         }
-        fetch ('https://tailswipes.netlify.app/messages', config)
+        fetch ('https://tailswipes.herokuapp.com/messages', config)
         .then(r => r.json())
         .then(ResponseJSON => {dispatch({ type: 'NEW_MESSAGE', payload: ResponseJSON.data})})
     }
@@ -29,7 +29,7 @@ export const getMessage = (messageId) => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_MESSAGES' });
         console.log(messageId)
-        fetch (`https://tailswipes.netlify.app/messages/${messageId}`)
+        fetch (`https://tailswipes.herokuapp.com/messages/${messageId}`)
         .then(r => r.json())
         .then(ResponseJSON => {dispatch({ type: 'GET_MESSAGE', messages: ResponseJSON.data})})
     }
