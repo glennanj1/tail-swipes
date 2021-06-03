@@ -6,13 +6,15 @@ import { deleteProfile } from '../actions/fetchProfiles'
 import { connect } from 'react-redux';
 import Spinner from 'react-bootstrap/Spinner'
 import Navigation from '../components/Navigation'
+import Popup from "../components/Modal";
 
 
 
 class ProfileContainer extends React.Component {
 
     state = {
-        isOpen: false
+        isOpen: false,
+        name: ''
     };
     
     componentDidMount(){
@@ -27,7 +29,6 @@ class ProfileContainer extends React.Component {
         } else if(this.props.data.length === 0) {
             return <h1>All out of matches check back later :D</h1>
         } else {
-            console.log(this.props.data)
             return this.props.data.map(p => 
                 <Profile 
                     key={p.id} 
@@ -36,38 +37,41 @@ class ProfileContainer extends React.Component {
                     image={p.attributes.image} 
                     match={p.attributes.match} 
                     onSwipe={this.onSwipe}
-                    show={this.state.isOpen}
-                    onHide={this.onHide}
-                    closeModal={this.closeModal} />
+                     />
         )}
     }
     
-    onSwipe = (direction) => {
-        if (direction === 'right' && this.props.match) {
+    onSwipe = (direction, props) => {
+        if (direction === 'right' && props.match) { 
+            
             this.props.createMessage({ 
                 message: {
-                    name: this.props.name ,
-                    message: this.props.message,
-                    profile_id: this.props.id,
-                    image: this.props.image
+                    name: props.name ,
+                    initial_message: props.initial_message,
+                    profile_id: props.id,
+                    image: props.image
                 }
             });
-            this.props.deleteProfile(this.props.id);
-            this.openModal();
+            this.openModal(props.name);
+            this.props.deleteProfile(props.id)
+
 
         } else {
-            this.props.deleteProfile(this.props.id);
+            this.props.deleteProfile(props.id)
         }
     }
 
-    openModal = () => { 
+    openModal = (name) => { 
         this.setState({ isOpen: true });
+        this.setState({ name: name})
     }
+
     closeModal = () => this.setState({ isOpen: false });
 
     render() {
         return (<div>
                     <Navigation />
+                    <Popup name={this.state.name} show={this.state.isOpen} onHide={this.closeModal} closeModal={this.closeModal}/>
                     <div style={{display: 'flex', justifyContent: 'center'}}>
                         <div style={{position: 'absolute', marginTop: '15vh'}}>
                             {this.loadProfiles()}
