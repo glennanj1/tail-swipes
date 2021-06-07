@@ -6,10 +6,9 @@ import TinderCard from 'react-tinder-card'
 export default class Profile extends Component {
 
     render() {
-        return (
-                <div style={{position: 'relative', maxWidth: '80vw'}}>
-                    <TinderCard style={{position: 'absolute'}}  onSwipe={(dir) => this.props.onSwipe(dir, this.props)} preventSwipe={['up', 'down']}>
-                        
+        return (  
+                <div style={{top: '15vh', position: 'absolute'}}>
+                    <TinderCard  onSwipe={(dir) => this.props.onSwipe(dir, this.props)} preventSwipe={['up', 'down']}>
                         <Card style={{borderRadius: '20px'}}>
                             <Card.Img style={{borderRadius: '20px'}} variant="top" src={this.props.image} /> 
                             <Card.ImgOverlay>
@@ -18,7 +17,6 @@ export default class Profile extends Component {
                         </Card> 
                     </TinderCard>
                 </div>
-
                 )}
 
 }

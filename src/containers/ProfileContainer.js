@@ -79,9 +79,7 @@ class ProfileContainer extends React.Component {
                     <Navigation />
                     <Popup name={this.state.name} show={this.state.isOpen} onHide={this.closeModal} closeModal={this.closeModal}/>
                     <div style={{display: 'flex', justifyContent: 'center'}}>
-                        <div style={{position: 'absolute'}}>
-                            {this.loadProfiles()}
-                        </div>
+                        {this.loadProfiles()}
                     </div>
                 </div>   
         )}
