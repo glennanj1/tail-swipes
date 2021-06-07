@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MessageContainer from './containers/MessageContainer';
 import ProfileContainer from './containers/ProfileContainer';
 import UserMessages from './containers/UserMessages';
-import MapContainer from './containers/ParkContainer'
+import PlaceContainer from './containers/PlaceContainer'
 
 export default class App extends React.Component {
 
@@ -21,7 +21,7 @@ export default class App extends React.Component {
           <Route exact path="/" component={ProfileContainer} />
           <Route exact path="/messages" component={MessageContainer} />
           <Route exact path="/messages/:user" component={UserMessages} />
-          <Route exact path="/park" component={MapContainer} />
+          <Route exact path="/park" component={PlaceContainer} />
         </Switch>
       </Router>
     </div>
