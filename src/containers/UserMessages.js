@@ -19,7 +19,6 @@ class UserMessages extends React.Component {
     }
     handleSubmit = e => {
         e.preventDefault();
-        console.log(this.state.value)
         const data = {
                 id: this.props.location.state.id,
                 name: '',

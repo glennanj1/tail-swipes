@@ -13,7 +13,6 @@ class PlaceContainer extends React.Component {
     }
 
     loadPlaces = () => {
-        console.log(this.props.data)
         return this.props.data.map(place => <Places name={place.attributes.name} vicinity={place.attributes.vicinity} />)
     }
 

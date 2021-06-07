@@ -1,8 +1,7 @@
 import { url } from '../index.js'
 
 export function fetchProfiles() {
-    console.log('fetch action')
-    console.log(url)
+    
     return (dispatch) => {
         dispatch({ type: 'LOADING_PROFILES' });
         fetch (`${url}/profiles`).then(r => r.json()).then(ResponseJSON => {dispatch({ type: 'ADD_PROFILES', profiles: ResponseJSON.data })})
