@@ -10,7 +10,7 @@ const store = createStore( rootReducer, applyMiddleware(thunk));
 
 export const url = 'https://tailswipes.herokuapp.com'
 
-console.log(store.getState())
+// console.log(store.getState())
 
 ReactDOM.render(
   <React.StrictMode>
