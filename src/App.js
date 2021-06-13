@@ -10,6 +10,7 @@ import MessageContainer from './containers/MessageContainer';
 import ProfileContainer from './containers/ProfileContainer';
 import UserMessages from './containers/UserMessages';
 import PlaceContainer from './containers/PlaceContainer'
+import Counter from './components/Counter'
 
 export default class App extends React.Component {
 
@@ -22,6 +23,7 @@ export default class App extends React.Component {
           <Route exact path="/messages" component={MessageContainer} />
           <Route exact path="/messages/:user" component={UserMessages} />
           <Route exact path="/park" component={PlaceContainer} />
+          <Route exact path="/counter" component={Counter} />
         </Switch>
       </Router>
     </div>
