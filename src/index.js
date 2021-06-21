@@ -8,7 +8,7 @@ import rootReducer from './reducers'
 
 const store = createStore( rootReducer, applyMiddleware(thunk));
 
-export const url = 'https://tailswipes.herokuapp.com'
+export const url = 'https://top-sports-book-rails.herokuapp.com'
 
 // console.log(store.getState())
 
