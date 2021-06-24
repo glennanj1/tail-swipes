@@ -7,7 +7,7 @@ export default class Profile extends Component {
 
     render() {
         return (  
-                <div style={{top: '15vh', position: 'absolute'}}>
+                <div style={{top: '25vh', position: 'absolute'}}>
                     <TinderCard  onSwipe={(dir) => this.props.onSwipe(dir, this.props)} preventSwipe={['up', 'down']}>
                         <Card style={{borderRadius: '20px'}}>
                             <Card.Img style={{borderRadius: '20px'}} variant="top" src={this.props.image} /> 

@@ -14,7 +14,7 @@ class MessageContainer extends React.Component {
 
     loadMessages = () => {
         if(this.props.loading) {
-            return (<Spinner animation="border" size='large' role="status" style={{position: 'absolute', top: '10vh'}}>
+            return (<Spinner animation="border" size='large' role="status" style={{position: 'absolute', top: '25vh'}}>
                         <span className="sr-only">Loading...</span>
                     </Spinner>)
         } else {

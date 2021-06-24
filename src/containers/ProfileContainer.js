@@ -23,14 +23,14 @@ class ProfileContainer extends React.Component {
 
     loadProfiles = () => {
         if(this.props.loading) {
-            return (<Spinner animation="border" size='large' role="status" style={{position: 'absolute', top: '10vh'}}>
+            return (<Spinner animation="border" size='large' role="status" style={{position: 'absolute', top: '25vh'}}>
                         <span className="sr-only">Loading...</span>
                     </Spinner>)
         } else if(this.props.data.length === 0) {
             return (
             <div>
                 <h1>All out of matches check back later :D</h1>
-                <Spinner animation="border" size='large' role="status" style={{position: 'absolute', top: '10vh'}}>
+                <Spinner animation="border" size='large' role="status" style={{position: 'absolute', top: '25vh'}}>
                         <span className="sr-only">Loading...</span>
                 </Spinner>
             </div>
