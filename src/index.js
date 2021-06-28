@@ -8,7 +8,7 @@ import rootReducer from './reducers'
 
 const store = createStore( rootReducer, applyMiddleware(thunk));
 
-export const url = 'https://topsportsbook.org'
+export const url = 'https://www.topsportsbook.org'
 
 // console.log(store.getState())
 
