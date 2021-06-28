@@ -13,7 +13,7 @@ class PlaceContainer extends React.Component {
     }
 
     loadPlaces = () => {
-        return this.props.data.map(place => <Places name={place.attributes.name} vicinity={place.attributes.vicinity} />)
+        return this.props.data.map(place => <Places key={place.id} name={place.attributes.name} vicinity={place.attributes.vicinity} />)
     }
 
     handleSubmit = e => {
