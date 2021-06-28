@@ -4,6 +4,8 @@ import PlaceForm from '../components/PlaceForm'
 import Places from '../components/Places'
 import { connect } from 'react-redux'
 import { fetchPlace } from '../actions/fetchPlace'
+import Spinner from 'react-bootstrap/Spinner'
+
 
 
 class PlaceContainer extends React.Component {
@@ -13,7 +15,13 @@ class PlaceContainer extends React.Component {
     }
 
     loadPlaces = () => {
-        return this.props.data.map(place => <Places key={place.id} name={place.attributes.name} vicinity={place.attributes.vicinity} />)
+        if(this.props.loading) {
+            return (<Spinner animation="border" size='large' role="status" style={{position: 'absolute', top: '25vh'}}>
+                        <span className="sr-only">Loading...</span>
+                    </Spinner>)
+        } else {
+            return this.props.data.map(place => <Places key={place.id} name={place.attributes.name} vicinity={place.attributes.vicinity} />
+        )}
     }
 
     handleSubmit = e => {
@@ -44,5 +52,5 @@ const mapStateToProps = state => {
       loading: state.places.loading
     }
 }
-  
+
 export default connect(mapStateToProps, { fetchPlace })(PlaceContainer);
