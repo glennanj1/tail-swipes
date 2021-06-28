@@ -11,7 +11,8 @@ import Spinner from 'react-bootstrap/Spinner'
 class PlaceContainer extends React.Component {
 
     state = {
-        value: ''
+        value: '',
+        zipError: ''
     }
 
     loadPlaces = () => {
@@ -26,19 +27,39 @@ class PlaceContainer extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.fetchPlace(this.state.value)
-        this.setState({value: ''})
+        const validated = this.validateZip();
+        if (validated) {
+            this.props.fetchPlace(this.state.value)
+            this.setState({value: ''})
+        }
+        
     }
 
     handleChange = e => {
         this.setState({value: e.target.value})
     }
 
+    validateZip = () => {
+        let zipError = ""
+
+        if (this.state.value.length !== 5) {
+            zipError = "Please enter 5 digit zip code."
+        }
+
+        if (zipError) {
+            this.setState({zipError})
+            return false
+        }
+        this.setState({zipError: ""})
+        return true
+
+    }
+
     render() {
         return(
             <div>
                 <Navigation />
-                <PlaceForm value={this.state.value} handleSubmit={this.handleSubmit} onChange={this.handleChange} />
+                <PlaceForm value={this.state.value} handleSubmit={this.handleSubmit} onChange={this.handleChange} zipError={this.state.zipError} />
                 {this.loadPlaces()}
             </div>
         )
