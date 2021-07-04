@@ -1,11 +1,11 @@
 html, body {
   height: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 #footer {
   position: fixed;
-  height: 50px;
+  height: 100px;
   margin-bottom: 0px;
   bottom: 0;
   width: 100vw;
