@@ -46,7 +46,7 @@ class UserMessages extends React.Component {
             <div>
                 <Navigation />
                 <h5>You Matched with {this.props.location.state.name} on {this.props.location.state.match}</h5>
-                <p>{this.loadMessages()}</p>
+                <p>{this.loadMessages()}</p><br />
                 <MessageForm value={this.state.value} onChange={this.handleChange} handleSubmit={this.handleSubmit} />
             </div>
         )
