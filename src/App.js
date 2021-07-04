@@ -26,6 +26,12 @@ export default class App extends React.Component {
           <Route exact path="/counter" component={Counter} />
         </Switch>
       </Router>
+      <footer id="footer" className="text-center text-lg-start bg-light text-muted">
+      <div class="text-center p-4 text-dark">
+        © 2021 Copyright:
+        <a className="text-reset fw-bold" href="https://johng.netlify.app/">John Glennan</a>
+      </div>
+    </footer>
     </div>
   );
   }
