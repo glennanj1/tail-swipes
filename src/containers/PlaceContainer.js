@@ -59,6 +59,9 @@ class PlaceContainer extends React.Component {
         return(
             <div>
                 <Navigation />
+                <p>
+                    Search for local dog parks in your area by Zip Code.
+                </p>
                 <PlaceForm value={this.state.value} handleSubmit={this.handleSubmit} onChange={this.handleChange} zipError={this.state.zipError} />
                 {this.loadPlaces()}
             </div>

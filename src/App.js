@@ -16,20 +16,22 @@ export default class App extends React.Component {
 
   render() {
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path="/" component={ProfileContainer} />
-          <Route exact path="/messages" component={MessageContainer} />
-          <Route exact path="/messages/:user" component={UserMessages} />
-          <Route exact path="/park" component={PlaceContainer} />
-          <Route exact path="/counter" component={Counter} />
-        </Switch>
-      </Router>
-      <footer id="footer" className="text-center text-lg-start bg-light text-muted">
-      <div class="text-center p-4 text-dark">
-        © 2021 Copyright:
-        <a className="text-reset fw-bold" href="https://johng.netlify.app/">John Glennan</a>
+    <div id="main" className="App">
+      <div id="wrap">
+        <Router>
+          <Switch>
+            <Route exact path="/" component={ProfileContainer} />
+            <Route exact path="/messages" component={MessageContainer} />
+            <Route exact path="/messages/:user" component={UserMessages} />
+            <Route exact path="/park" component={PlaceContainer} />
+            <Route exact path="/counter" component={Counter} />
+          </Switch>
+        </Router>
+
+      </div>
+      <footer id="footer" className="text-center text-lg-start bg-primary">
+        <div class="text-center p-4 text-white">
+          © 2021 Copyright: <a className="text-reset fw-bold" href="https://johng.netlify.app/"> John Glennan</a>
       </div>
     </footer>
     </div>
