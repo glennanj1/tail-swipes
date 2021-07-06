@@ -5,7 +5,6 @@ import { createMessage } from '../actions/fetchMessages'
 import { deleteProfile } from '../actions/fetchProfiles'
 import { connect } from 'react-redux';
 import Spinner from 'react-bootstrap/Spinner'
-import Navigation from '../components/Navigation'
 import Popup from "../components/Modal";
 
 
@@ -76,7 +75,6 @@ class ProfileContainer extends React.Component {
 
     render() {
         return (<div>
-                    <Navigation />
                     <Popup name={this.state.name} show={this.state.isOpen} onHide={this.closeModal} closeModal={this.closeModal}/>
                     <div style={{display: 'flex', justifyContent: 'center'}}>
                         {this.loadProfiles()}

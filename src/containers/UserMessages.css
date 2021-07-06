@@ -1,0 +1,13 @@
+.convo {
+    margin-bottom: -400px;
+}
+
+.messageRight {
+    display: flex;
+    flex-direction: column;
+}
+
+.messageLeft {
+    display: flex;
+    flex-direction: column;
+}

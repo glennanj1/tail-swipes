@@ -3,7 +3,6 @@ import Messages from '../components/Messages'
 import { fetchMessages } from '../actions/fetchMessages'
 import { connect } from 'react-redux';
 import Spinner from 'react-bootstrap/Spinner'
-import Navigation from '../components/Navigation'
 
 
 class MessageContainer extends React.Component {
@@ -25,7 +24,6 @@ class MessageContainer extends React.Component {
     render() {
         return (
         <div>
-            <Navigation />
             {this.loadMessages()}
         </div>)
     }

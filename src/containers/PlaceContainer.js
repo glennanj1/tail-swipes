@@ -1,5 +1,4 @@
 import React from 'react'
-import Navigation from '../components/Navigation' 
 import PlaceForm from '../components/PlaceForm'
 import Places from '../components/Places'
 import { connect } from 'react-redux'
@@ -58,7 +57,6 @@ class PlaceContainer extends React.Component {
     render() {
         return(
             <div>
-                <Navigation />
                 <p>
                     Search for local dog parks in your area by Zip Code.
                 </p>

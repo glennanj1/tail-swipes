@@ -1,5 +1,5 @@
+import './UserMessages.css'
 import React from 'react'
-import Navigation from '../components/Navigation'
 import MessageForm from '../components/MessageForm'
 import { fetchConversations, sendMessage } from '../actions/fetchConversations'
 import { connect } from 'react-redux';
@@ -44,9 +44,11 @@ class UserMessages extends React.Component {
     render() {
         return (
             <div>
-                <Navigation />
-                <h5>You Matched with {this.props.location.state.name} on {this.props.location.state.match}</h5>
-                <p>{this.loadMessages()}</p><br />
+                <div className='convo'>
+                    <h5>You Matched with {this.props.location.state.name} on {this.props.location.state.match}</h5>
+                    <p className="message">{this.loadMessages()}</p>
+                </div>
+                
                 <MessageForm value={this.state.value} onChange={this.handleChange} handleSubmit={this.handleSubmit} />
             </div>
         )
