@@ -44,7 +44,7 @@ class UserMessages extends React.Component {
     render() {
         return (
             <div>
-                <div className='convo'>
+                <div>
                     <h5>You Matched with {this.props.location.state.name} on {this.props.location.state.match}</h5>
                     <p className="message">{this.loadMessages()}</p>
                 </div>
