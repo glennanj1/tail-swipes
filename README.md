@@ -1,4 +1,10 @@
-# tail-swipes
+# Tail Swipes 
+
+Welcome! This is my animal socialization app that uses create-react-app, redux and thunk. A mock user is able to swipe left and right on animal profiles. If the mock user matches with a profile said user is able to message back and forth. This was one of my most challenging projects but I have it up and running on https://tailswipes.netlify.app. Please check it out and feel free to contribute. I would be glad to review pull requests to make this app better. I want to incorporate a landing page, login system and a merchandise store.  
+
+# Install Instructions
+
+First head over to my tail-swipes backend clone and bundle. Then create, migrate and seed the database. Next start up rails server so you have some back end data to play with. Now for the front end use npm i && npm start. After installing the packages and starting the react server the only other dependency is google maps api key which is required to use the google place park finder. 
 
 # Getting Started with Create React App
 
