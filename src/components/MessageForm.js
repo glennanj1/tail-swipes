@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap'
 
+//add api calls under messages to give random funny text
+
 export default class MessageShow extends Component {
     render() {
         return (
@@ -9,7 +11,6 @@ export default class MessageShow extends Component {
                     <Form.Label>Messages</Form.Label>
                     <Form.Control type="text" value={this.props.value} onChange={this.props.onChange} placeholder="Enter Message" />
                     <Form.Text className="text-muted">
-                    example catch phrase here
                     </Form.Text>
                 </Form.Group>
                 <Button variant="primary" type="submit">
