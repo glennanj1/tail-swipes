@@ -1,0 +1,7 @@
+.messagePreview {
+    border: solid;
+    border-color: #58cef9;
+    padding: 10px;
+    box-shadow: 10px 10px #58cef9;
+    margin: 25px;
+}

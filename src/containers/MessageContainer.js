@@ -1,3 +1,4 @@
+import './MessageContainer.css'
 import React from 'react'
 import Messages from '../components/Messages'
 import { fetchMessages } from '../actions/fetchMessages'
