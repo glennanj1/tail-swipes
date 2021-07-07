@@ -35,7 +35,7 @@ class ProfileContainer extends React.Component {
                 </Spinner>
             </div>
             )} else {
-            return this.props.data.slice(0,1).map(p => 
+            return this.props.data.map(p => 
                 <Profile 
                     key={p.id} 
                     id={p.id} 
@@ -58,20 +58,9 @@ class ProfileContainer extends React.Component {
                 }
             });
             this.openModal(props.name);
-            this.props.deleteProfile(props.id)
-            setTimeout(() => {
-                this.props.fetchProfiles()
-                this.loadProfiles()
-            }, 100)
-    
-           
+            this.props.deleteProfile(props.id)          
         } else {
             this.props.deleteProfile(props.id)
-            setTimeout(() => {
-                this.props.fetchProfiles()
-                this.loadProfiles()
-            }, 100)
-            
         }
     }
 
