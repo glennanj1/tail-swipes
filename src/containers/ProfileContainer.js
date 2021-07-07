@@ -34,7 +34,7 @@ class ProfileContainer extends React.Component {
                 </Spinner>
             </div>
             )} else {
-            return this.props.data.map(p => 
+            return this.props.data.slice(0,1).map(p => 
                 <Profile 
                     key={p.id} 
                     id={p.id} 
@@ -48,7 +48,6 @@ class ProfileContainer extends React.Component {
     
     onSwipe = (direction, props) => {
         if (direction === 'right' && props.match) { 
-            
             this.props.createMessage({ 
                 message: {
                     name: props.name ,
@@ -59,10 +58,19 @@ class ProfileContainer extends React.Component {
             });
             this.openModal(props.name);
             this.props.deleteProfile(props.id)
-
-
+            setTimeout(() => {
+                this.props.fetchProfiles()
+                this.loadProfiles()
+            }, 100)
+    
+           
         } else {
             this.props.deleteProfile(props.id)
+            setTimeout(() => {
+                this.props.fetchProfiles()
+                this.loadProfiles()
+            }, 100)
+            
         }
     }
 
@@ -74,12 +82,12 @@ class ProfileContainer extends React.Component {
     closeModal = () => this.setState({ isOpen: false });
 
     render() {
-        return (<div>
+        return (<>
                     <Popup name={this.state.name} show={this.state.isOpen} onHide={this.closeModal} closeModal={this.closeModal}/>
                     <div style={{display: 'flex', justifyContent: 'center'}}>
                         {this.loadProfiles()}
                     </div>
-                </div>   
+                </>   
         )}
 }
 
