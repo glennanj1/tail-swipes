@@ -5,3 +5,9 @@
     box-shadow: 10px 10px #58cef9;
     margin: 25px;
 }
+
+.messageForm {
+    position: fixed;
+    width: 100vw;
+    bottom: 100px;
+}
