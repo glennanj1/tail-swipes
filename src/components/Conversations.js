@@ -12,10 +12,8 @@ export default class Conversations extends Component {
         return (
             <div className={cname}>
                 <Image style={{position: 'relative', width: '60px', height: '60px'}} src={this.props.image} alt='picture' roundedCircle />
-                <p>
-                    <h4>{name}</h4>
-                    <p>{this.props.chat}</p>
-                </p>
+                <h4>{name}</h4>
+                <h6>{this.props.chat}</h6>
             </div>
         )
     }
