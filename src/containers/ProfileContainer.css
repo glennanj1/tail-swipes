@@ -1,0 +1,29 @@
+.profileContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.profileOuter {
+    top: 25vh;
+    position: absolute;
+    border-radius: 20px;
+    border: solid;
+    box-shadow: 20px 20px 3px #2494d3;
+}
+
+.profileInner {
+    border-radius: 20px;
+}
+
+.cardImage {
+    border-radius: 20px;
+}
+
+.cardTitle {
+    color: white;
+    text-shadow: 1px 5px black;
+    letter-spacing: 10px;
+    bottom: 0;
+    font-size: 50px;
+    position: absolute;
+}

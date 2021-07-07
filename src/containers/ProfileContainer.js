@@ -1,3 +1,4 @@
+import './ProfileContainer.css'
 import React from 'react'
 import Profile from '../components/Profile'
 import { fetchProfiles } from '../actions/fetchProfiles'
@@ -84,7 +85,7 @@ class ProfileContainer extends React.Component {
     render() {
         return (<>
                     <Popup name={this.state.name} show={this.state.isOpen} onHide={this.closeModal} closeModal={this.closeModal}/>
-                    <div style={{display: 'flex', justifyContent: 'center'}}>
+                    <div className="profileContainer">
                         {this.loadProfiles()}
                     </div>
                 </>   
