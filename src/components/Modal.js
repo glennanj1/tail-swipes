@@ -7,7 +7,7 @@ export default class Popup extends Component {
        
         return (
            
-            <div>
+            <>
                 <Modal show={this.props.show}>
                 <Modal.Header closeButton>
                 <Modal.Title>Match!</Modal.Title>
@@ -18,7 +18,7 @@ export default class Popup extends Component {
                 <Button variant="secondary" onClick={this.props.closeModal}>Close</Button>
                 </Modal.Footer>
                 </Modal>
-            </div>
+            </>
         )
     }
 }
