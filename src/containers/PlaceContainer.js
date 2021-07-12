@@ -1,3 +1,4 @@
+import './PlaceContainer.css'
 import React from 'react'
 import PlaceForm from '../components/PlaceForm'
 import Places from '../components/Places'
@@ -11,24 +12,30 @@ class PlaceContainer extends React.Component {
 
     state = {
         value: '',
-        zipError: ''
+        zipError: '',
+        submitted: false
     }
 
     loadPlaces = () => {
+        console.log(this.props)
         if(this.props.loading) {
             return (<Spinner animation="border" size='large' role="status" style={{position: 'absolute', top: '25vh'}}>
                         <span className="sr-only">Loading...</span>
                     </Spinner>)
+        } else if (this.state.submitted && this.props.data.length === 0) {
+            return (<h1>No Dog parks here within 5 miles.</h1>)
         } else {
-            return this.props.data.map(place => <Places key={place.id} name={place.attributes.name} vicinity={place.attributes.vicinity} />
+            return this.props.data.map(place => <Places key={place.id} name={place.attributes.name} vicinity={place.attributes.vicinity} rating={place.attributes.rating} photo={place.attributes.icon} />
         )}
     }
 
     handleSubmit = e => {
+        
         e.preventDefault()
         const validated = this.validateZip();
         if (validated) {
             this.props.fetchPlace(this.state.value)
+            this.setState({submitted: true})
             this.setState({value: ''})
         }
         
