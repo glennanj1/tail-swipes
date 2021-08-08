@@ -9,7 +9,7 @@ export default class Places extends Component {
                     <Figure.Image
                         width={85}
                         height={90}
-                        alt="171x180"
+                        alt="figure"
                         src={this.props.photo}
                     />
                      <h1>{this.props.name}</h1>
