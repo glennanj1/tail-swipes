@@ -6,6 +6,14 @@ Welcome! This is my animal socialization app that uses create-react-app, redux a
 
 First head over to my tail-swipes backend clone and bundle. Then create, migrate and seed the database. Next start up rails server so you have some back end data to play with. Now for the front end use npm i && npm start. After installing the packages and starting the react server the only other dependency is google maps api key which is required to use the google place park finder. 
 
+# To Do
+JWT Auth
+fix image height and width 
+check google for other issues
+add google anylitics
+cover/introduction page
+instructions
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
